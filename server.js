@@ -60,15 +60,15 @@ app.get('/api/getdata',async (req,res)=>{
     return res.json({dataFromUser});
 });
 
-// if(process.env.NODE_ENV=="production"){
-//     app.use(express.static('FrontEnd/build'));
-// }
+if(process.env.NODE_ENV=="production"){
+    app.use(express.static('FrontEnd/build'));
+}
 
-app.use(express.static(path.join(__dirname, "./FrontEnd/build")));
+// app.use(express.static(path.join(__dirname, "./FrontEnd/build")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./FrontEnd/build/index.html"));
-});
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./FrontEnd/build/index.html"));
+// });
 
 app.listen(port, () => {
     console.log(`Server is running on port : ${port}`)
