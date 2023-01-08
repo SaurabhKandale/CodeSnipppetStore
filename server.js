@@ -67,7 +67,7 @@ app.get('/api/getdata',async (req,res)=>{
 app.use(express.static(path.join(__dirname, "./FrontEnd/build")));
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./FrontEnd/build/index.html"));
+  res.sendFile("./FrontEnd/build/index.html");
 });
 
 app.listen(port, () => {
